@@ -1,0 +1,90 @@
+    1  ls
+    2  git clone https://github.com/amitvashisttech/terraform-mindtree-28Oct2020.git
+    3  ls
+    4  cd terraform-mindtree-28Oct2020/
+    5  ls
+    6  mkdir 00-Install-Terraform
+    7  ls
+    8  vim 00-Install-Terraform/terraform-bootstrap.sh 
+    9  ls
+   10  cd 00-Install-Terraform/
+   11  ls
+   12  rm -rf /root/terraform_0.12.28_linux_amd64.zip 
+   13  ls
+   14  chmod +x terraform-bootstrap.sh 
+   15  ./terraform-bootstrap.sh 
+   16  ls
+   17  cd ..
+   18  ls
+   19  git add . ; git commit -m "00-Install-Terraform"; git push 
+   20  ls
+   21  git config --list 
+   22  ,s
+   23  ls
+   24  vim README.md 
+   25  git add . 
+   26  git commit -m "Update: ReadMe"
+   27  git config --global --edit
+   28  git config credential.helper store
+   29  git commit -m "Update: ReadMe"
+   30  git push 
+   31  cd 
+   32  ls
+   33  ls -a 
+   34  exit
+   35  grep -i AWS .bashrc 
+   36  ls
+   37  cd terraform-mindtree-28Oct2020/
+   38  ls
+   39  cd 01-First-Deployment/
+   40  ls
+   41  cat first_deployment.tf 
+   42  ls
+   43  cd ..
+   44  ls
+   45  cp -rf 01-First-Deployment 02-CLI-Excutions
+   46  ls
+   47  cd 02-CLI-Excutions/
+   48  ls
+   49  ls -a 
+   50  rm -rf .terraform* 
+   51  ls
+   52  rm -rf terraform.tfstate* 
+   53  ls
+   54  ls -a 
+   55  terraform init 
+   56  ls -a 
+   57  vim first_deployment.tf 
+   58  terraform plan 
+   59  terraform plan -out build-plan
+   60  ls
+   61  file build-plan 
+   62  cat build-plan 
+   63  vim first_deployment.tf 
+   64  rm -rf build-plan 
+   65  terraform plan -out build-plan
+   66  ls
+   67  terraform show build-plan 
+   68  terraform apply  build-plan 
+   69  terraform show 
+   70  ls
+   71  file terraform.tfstate 
+   72  cat terraform.tfstate 
+   73  cat first_deployment.tf 
+   74  terraform refresh
+   75  cat terraform.tfstate 
+   76  terraform apply 
+   77  terraform plan --destroy -out destroy-plan
+   78  terraform apply "destroy-plan"
+   79  ls
+   80  cat terraform.tfstate
+   81  ls
+   82  terraform validate
+   83  vim first_deployment.tf 
+   84  terraform validate
+   85  vim first_deployment.tf 
+   86  terraform validate
+   87  ls
+   88  history 
+   89  ls
+   90  history > ../Day1_History
