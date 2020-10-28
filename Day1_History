@@ -88,3 +88,70 @@
    88  history 
    89  ls
    90  history > ../Day1_History
+   91  ls
+   92  cd ..
+   93  ls
+   94  git add . ; git commit -m "02-CLI-Excutions"; git push 
+   95  ls
+   96  cp -rf 01-First-Deployment 03-Resources
+   97  ls
+   98  df -h 
+   99  ls
+  100  free -m 
+  101  ls
+  102  cd 03-Resources/
+  103  ls
+  104  rm -rf terraform.tfstate* 
+  105  ls
+  106  sl
+  107  ls
+  108  mv first_deployment.tf resource.tf
+  109  ls
+  110  vim resource.tf 
+  111  ls
+  112  ls -a 
+  113  terraform plan 
+  114  vim resource.tf 
+  115  terraform plan 
+  116  vim resource.tf 
+  117  terraform plan 
+  118  vim resource.tf 
+  119  terraform plan 
+  120  ls
+  121  vim resource.tf 
+  122  terraform apply 
+  123  terraform destroy
+  124  ls
+  125  vim resource.tf 
+  126  terraform apply 
+  127  terraform destroy 
+  128  ls
+  129  vim resource.tf 
+  130  terraform apply 
+  131  vim resource.tf 
+  132  terraform apply 
+  133  vim resource.tf 
+  134  terraform apply 
+  135  vim resource.tf 
+  136  terraform apply 
+  137  terraform show 
+  138  ls
+  139  cat terraform.tfstate | more 
+  140  cat terraform.tfstate.backup | more 
+  141  ls
+  142  vim resource.tf 
+  143  terraform destroy --auto-approve
+  144  terraform plan 
+  145  terraform destroy --auto-approve -traget aws_instance.frontend
+  146  terraform destroy --auto-approve -target aws_instance.frontend
+  147  vim resource.tf 
+  148  terraform destroy --auto-approve
+  149  ls
+  150  vim resource.tf 
+  151  terraform validate
+  152  vim resource.tf 
+  153  terraform validate
+  154  ls
+  155  cd ..
+  156  ls
+  157  history > Day1_History 
