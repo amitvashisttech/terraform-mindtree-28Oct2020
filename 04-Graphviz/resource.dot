@@ -1,0 +1,16 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.backend" [label = "aws_instance.backend", shape = "box"]
+		"[root] aws_instance.frontend" [label = "aws_instance.frontend", shape = "box"]
+		"[root] provider.aws" [label = "provider.aws", shape = "diamond"]
+		"[root] aws_instance.backend" -> "[root] provider.aws"
+		"[root] aws_instance.frontend" -> "[root] aws_instance.backend"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_instance.frontend"
+		"[root] provider.aws (close)" -> "[root] aws_instance.frontend"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider.aws (close)"
+	}
+}
+
