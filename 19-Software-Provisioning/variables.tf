@@ -35,9 +35,9 @@ variable "instance_count" {
   type = map
   default = { 
       default = "1"
-      dev     = "2"
-      prod    = "5"
-      mindtree = "7"
+      dev     = "1"
+      prod    = "1"
+      mindtree = "1"
   }
 
 }
