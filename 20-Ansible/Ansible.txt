@@ -1,0 +1,9 @@
+ 1063  mkdir 20-Ansible
+ 1065  cd 20-Ansible/
+ 1067  apt-get install ansible sshpass -y 
+ 1069  ansible --version 
+ 1078  ansible all -i inventory -m ping -u vagrant -k 
+ 1080  ansible all -i inventory -m ping -u vagrant -k 
+ 1082  ansible all -i inventory -m ping -u vagrant -k 
+ 1085  ansible all -i inventory -m command -a 'df -h' -u vagrant -k 
+ 1090  history | grep -i ansible > Ansible.txt
