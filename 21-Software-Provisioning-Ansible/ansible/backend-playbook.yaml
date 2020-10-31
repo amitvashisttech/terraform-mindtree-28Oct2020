@@ -1,0 +1,21 @@
+---
+
+- hosts: 'prod'
+  name: "WebServer Deployment Play"
+  become: yes 
+  become_method: sudo 
+  tasks: 
+    - name: Install Required Web Packages 
+      apt: name=apache2 state=present
+
+    - name: Start apache Service
+      service: name=apache2 state=started
+
+    - name: Install Git Packages
+      apt: name=git state=present
+ 
+    - name: Download Required Image
+      get_url: url="https://www.mariomayhem.com/downloads/wallpapers/7/nsmb_wp7_1280.jpg"  dest=/var/www/html/mario.jpg mode=0755
+
+    - name: Deploy a Sample Site Page / File
+      template: src=templates/info.j2 dest=/var/www/html/info.html
