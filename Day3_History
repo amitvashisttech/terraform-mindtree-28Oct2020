@@ -1,0 +1,1000 @@
+   99  ls
+  100  free -m 
+  101  ls
+  102  cd 03-Resources/
+  103  ls
+  104  rm -rf terraform.tfstate* 
+  105  ls
+  106  sl
+  107  ls
+  108  mv first_deployment.tf resource.tf
+  109  ls
+  110  vim resource.tf 
+  111  ls
+  112  ls -a 
+  113  terraform plan 
+  114  vim resource.tf 
+  115  terraform plan 
+  116  vim resource.tf 
+  117  terraform plan 
+  118  vim resource.tf 
+  119  terraform plan 
+  120  ls
+  121  vim resource.tf 
+  122  terraform apply 
+  123  terraform destroy
+  124  ls
+  125  vim resource.tf 
+  126  terraform apply 
+  127  terraform destroy 
+  128  ls
+  129  vim resource.tf 
+  130  terraform apply 
+  131  vim resource.tf 
+  132  terraform apply 
+  133  vim resource.tf 
+  134  terraform apply 
+  135  vim resource.tf 
+  136  terraform apply 
+  137  terraform show 
+  138  ls
+  139  cat terraform.tfstate | more 
+  140  cat terraform.tfstate.backup | more 
+  141  ls
+  142  vim resource.tf 
+  143  terraform destroy --auto-approve
+  144  terraform plan 
+  145  terraform destroy --auto-approve -traget aws_instance.frontend
+  146  terraform destroy --auto-approve -target aws_instance.frontend
+  147  vim resource.tf 
+  148  terraform destroy --auto-approve
+  149  ls
+  150  vim resource.tf 
+  151  terraform validate
+  152  vim resource.tf 
+  153  terraform validate
+  154  ls
+  155  cd ..
+  156  ls
+  157  history > Day1_History 
+  158  git add . ; git commit -m "03-Resources"; git push 
+  159  ls
+  160  cp -rf 03-Resources 04-Graphviz
+  161  ls
+  162  cd 04-Graphviz/
+  163  ls
+  164  rm -rf terraform.tfstate* 
+  165  ls
+  166  ls -a 
+  167  ls
+  168  vim README.md
+  169  ls
+  170  cat README.md 
+  171  apt-get install apache2 graphviz -y
+  172  ls
+  173  ip addr 
+  174  mkdir -p /var/www/html/Terraform-Images
+  175  ls
+  176  terraform graph
+  177  terraform graph > resource.dot
+  178  dot resource.dot -Tsvg resource.svg
+  179  dot resource.dot -Tsvg -o resource.svg
+  180  ls
+  181  cp -rf resource.svg /var/www/html/Terraform-Images/01-resource.svg
+  182  ls
+  183  history 
+  184  vim README.md 
+  185  ls
+  186  cd ..
+  187  ls
+  188  git add . ; git commit -m "04-Graphviz"; git push 
+  189  ls
+  190  cp -rf 04-Graphviz 05-Providers
+  191  ls
+  192  cd 05-Providers/
+  193  ls
+  194  rm -rf * 
+  195  ls
+  196  p -rf ../03-Resources/resource.tf provider.tf
+  197  cp -rf ../03-Resources/resource.tf provider.tf
+  198  ls
+  199  vim provider.tf 
+  200  ls
+  201  vim provider.tf 
+  202  terraform init 
+  203  ls
+  204  rm -rf .terraform
+  205  terraform init 
+  206  rm -rf .terraform
+  207  ls
+  208  vim provider.tf 
+  209  terraform init 
+  210  rm -rf .terraform
+  211  ls
+  212  vim provider.tf 
+  213  terraform init 
+  214  rm -rf .terraform
+  215  vim provider.tf 
+  216  terraform init 
+  217  ls
+  218  cat provider.tf 
+  219  ls
+  220  vim provider.tf 
+  221  terraform apply 
+  222  ls
+  223  vim provider.tf 
+  224  terraform validate
+  225  vim provider.tf 
+  226  terraform validate
+  227  vim provider.tf 
+  228  terraform init 
+  229  terraform apply 
+  230  terraform destroy 
+  231  ls
+  232  vim README.md
+  233  ls
+  234  cd ..
+  235  ls
+  236  git add . ; git commit -m "05-Providers"; git push 
+  237  ls
+  238  cp -rf 05-Providers 06-Variables
+  239  cd 06-Variables/
+  240  ls
+  241  rm -rf terraform.tfstate* 
+  242  ls
+  243  rm README.md 
+  244  ls
+  245  mv provider.tf varibales.tf
+  246  ls
+  247  vim varibales.tf 
+  248  terraform init 
+  249  terraform apply 
+  250  terraform destroy 
+  251  l
+  252  ls
+  253  rm 1
+  254  ls
+  255  vim varibales.tf 
+  256  terraform apply --auto-approve
+  257  terraform show
+  258  terraform destroy 
+  259  ls
+  260  cd ..
+  261  ls
+  262  git add . ; git commit -m "06-Variables"; git push 
+  263  ls
+  264  cd 06-Variables/
+  265  ls
+  266  mkdir exp1
+  267  ls
+  268  mv * exp1/
+  269  ls
+  270  mkdir exp2
+  271  ls
+  272  cd exp2/
+  273  ls
+  274  vi varibales.tf
+  275  ls
+  276  vim main.tf
+  277  ls
+  278  vim terraform.tfvars
+  279  ls
+  280  cd ..
+  281  ls
+  282  ls -a 
+  283  mv .terraform exp2
+  284  ls
+  285  cd exp2/
+  286  ls
+  287  ls -a 
+  288  ls
+  289  vim main.tf 
+  290  ls
+  291  cat varibales.tf 
+  292  terraform plan 
+  293  ls
+  294  mv terraform.tfvars terraform.tfvars.old
+  295  ls
+  296  terraform plan 
+  297  ls
+  298  cat varibales.tf 
+  299  ls
+  300  cp -rf terraform.tfvars.old amit-example.tfvars
+  301  ls
+  302  vim amit-example.tfvars 
+  303  terraform plan 
+  304  terraform plan -var-file=amit-example.tfvars 
+  305  ls
+  306  cd ..
+  307  ls
+  308  rm -rf exp2/.terraform
+  309  ls
+  310  cd ..
+  311  ls
+  312  git add . ; git commit -m "06-Variables"; git push 
+  313  terraform plan -var-file=amit-example.tfvars 
+  314  ls
+  315  cat  03-Resources/resource.tf 
+  316  ls
+  317  cp -rf 03-Resources 07-Outputs
+  318  ls
+  319  cd 07-Outputs/
+  320  sl
+  321  ls
+  322  rm -rf terraform.tfstate* 
+  323  ls
+  324  mv resource.tf outputs.tf 
+  325  ls
+  326  vim outputs.tf 
+  327  ls
+  328  vim outputs.tf 
+  329  terraform apply 
+  330  terraform show 
+  331  vim outputs.tf 
+  332  terraform apply 
+  333  vim outputs.tf 
+  334  terraform apply 
+  335  ls
+  336  vim outputs.tf 
+  337  terraform apply 
+  338  terraform output 
+  339  terraform output backend_ips
+  340  cat terraform.tfstate | more 
+  341  ls
+  342  cd ..
+  343  ls
+  344  cd 07-Outputs/
+  345  ls
+  346  terraform destroy --auto-approve
+  347  ls
+  348  git add . ; git commit -m "07-Outputs"; git push 
+  349  ls
+  350  cd ..
+  351  ls
+  352  cat 07-Outputs/
+  353  cat 07-Outputs/outputs.tf 
+  354  ls
+  355  mkdir 08-Refrence
+  356  vim 08-Refrence/reference.tf
+  357  terraform init
+  358  ls
+  359  cd 08-Refrence/
+  360  ls
+  361  terraform init 
+  362  terraform apply 
+  363  terraform destroy 
+  364  ls
+  365  cd ..
+  366  ls
+  367  git add . ; git commit -m "08-Refrence"; git push 
+  368  ls
+  369  mkdir 09-Exercise
+  370  ls
+  371  cd 09-Exercise/
+  372  ls
+  373  vim README.md
+  374  ks
+  375  cd ..
+  376  l
+  377  git add . ; git commit -m "08-Refrence"; git push 
+  378  ls
+  379  vim 09-Exercise/README.md 
+  380  git add . ; git commit -m "08-Refrence"; git push 
+  381  ls
+  382  cd 09-Exercise/
+  383  ls
+  384  vim solution.tf
+  385  terraform init 
+  386  terraform apply
+  387  vim solution.tf 
+  388  terraform apply
+  389  terraform show 
+  390  terraform destroy 
+  391  vim solution.tf 
+  392  terraform destroy 
+  393  ls
+  394  c d..
+  395  cd ..
+  396  ls
+  397  git add . ; git commit -m "09-Exercise"; git push 
+  398  terraform console
+  399  ls
+  400  mkdir 10-Expressions
+  401  vim 10-Expressions/expression.tf
+  402  ls
+  403  cp -rf 09-Exercise/.terraform 10-Expressions ; cd 10-Expressions/
+  404  ls
+  405  terraform plan 
+  406  ls
+  407  vim expression.tf 
+  408  terraform plan 
+  409  > expression.tf 
+  410  vim expression.tf 
+  411  terraform plan
+  412  ls
+  413  cd ..
+  414  ls
+  415  git add . ; git commit -m "09-Exercise"; git push 
+  416  ls
+  417  ls -a 09-Exercise/
+  418  ls
+  419  mkdir 11-Locals
+  420  vim 11-Locals/
+  421  vim 11-Locals/local.tf
+  422  cd 11-Locals/
+  423  ls
+  424  cp -rf ../10-Expressions/.terraform . 
+  425  terraform plan 
+  426  vim 
+  427  ls
+  428  vim local.tf 
+  429  terraform plan 
+  430  vim local.tf 
+  431  terraform plan 
+  432  ls
+  433  cd ..
+  434  ls
+  435  git add . ; git commit -m "11-Locals"; git push 
+  436  ls
+  437  cp -rf 11-Locals 12-Functions 
+  438  ls
+  439  cd 12-Functions/
+  440  ls
+  441  mv local.tf functions.tf
+  442  vim functions.tf 
+  443  ls
+  444  ssh-keygen 
+  445  cp -rf /root/.ssh/id_rsa.pub . 
+  446  ls
+  447  cat functions.tf 
+  448  ls
+  449  ls -a 
+  450  terraform validate
+  451  terraform apply 
+  452  ssh -i /root/.ssh/id_rsa ec2-user@18.209.214.172
+  453  ssh -i /root/.ssh/id_rsa ubuntu@18.209.214.172
+  454  ls
+  455  cat id_rsa.pub 
+  456  vim functions.tf 
+  457  ls
+  458  terraform destroy --auto-approve
+  459  ls
+  460  > id_rsa.pub 
+  461  cat id_rsa.pub 
+  462  ls
+  463  c d..
+  464  cd ..
+  465  ls
+  466  git add . ; git commit -m "12-Functions"; git push 
+  467  ls
+  468  cd 12-Functions/
+  469  ls
+  470  cd ..
+  471  ls
+  472  history 
+  473  ls
+  474  date > Day2_History
+  475  git add . ; git commit -m "Day2_History"; git push 
+  476  ls
+  477  cd 12-Functions/
+  478  ls
+  479  cat functions.tf 
+  480  vim functions.tf 
+  481  ls
+  482  cd ..
+  483  ls
+  484  git add . ; git commit -m "Day2_History"; git push 
+  485  terraform console
+  486  date
+  487  ls
+  488  mkdir 13-DataSource
+  489  ls
+  490  cd 13-DataSource/
+  491  ls
+  492  mkdir exp1
+  493  ls
+  494  cd exp1/
+  495  ls
+  496  cp -rf ../../12-Functions/.terraform . 
+  497  ls
+  498  vim datasource.tf 
+  499  ls
+  500  rm -rf .terraform
+  501  ls
+  502  terraform init 
+  503  terraform apply --auto-approve
+  504  vim datasource.tf 
+  505  terraform validate
+  506  terraform apply --auto-approve
+  507  terraform show
+  508  "amzn2-ami-hvm-2.0.20200917.0-x86_64-gp2"
+  509  terraform destroy  --auto-approve
+  510  vim datasource.tf 
+  511  terraform apply --auto-approve
+  512  terraform show
+  513  terraform destroy  --auto-approve
+  514  ls
+  515  cd ..
+  516  ls
+  517  cd ..
+  518  ls
+  519  git add . ; git status 
+  520  git commit -m "13-DataSource"; git push
+  521  ls
+  522  cd 13-DataSource/
+  523  ls
+  524  mkdir exp2
+  525  ls
+  526  cd exp2/
+  527  ls
+  528  vim datasource.tf
+  529  terraform init 
+  530  terraform plan 
+  531  vim datasource.tf 
+  532  terraform plan 
+  533  vim datasource.tf 
+  534  terraform plan 
+  535  vim datasource.tf 
+  536  terraform plan 
+  537  ls
+  538  vim datasource.tf 
+  539  cat datasource.tf 
+  540  cd ..
+  541  ls
+  542  cd ..
+  543  git add . ; git commit -m "13-DataSource-exp2"; git push
+  544  ls
+  545  mkdir 14-DynamicBlock/{Before,After} -p 
+  546  ls
+  547  cd 14-DynamicBlock/
+  548  ls
+  549  cd Before/
+  550  ls
+  551  vim before-sg.tf
+  552  ls
+  553  cp -rf ../../13-DataSource/exp2/.terraform . 
+  554  ls
+  555  terraform plan 
+  556  terraform apply --auto-approve
+  557  ls
+  558  vim before-sg.tf 
+  559  ls
+  560  rm 1
+  561  terraform apply --auto-approve
+  562  ls
+  563  vim before-sg.tf 
+  564  terraform apply --auto-approve
+  565  ls
+  566  terraform destroy  --auto-approve
+  567  cd ..
+  568  ls
+  569  cd After/
+  570  ls
+  571  vim after-sg.tf
+  572  ls
+  573  cp -rf ../Before/.terraform . 
+  574  terraform plan 
+  575  terraform apply  --auto-approve
+  576  ls
+  577  vim after-sg.tf 
+  578  terraform apply  --auto-approve
+  579  terraform destroy  --auto-approve
+  580  cd ..
+  581  ls
+  582  cd ..
+  583  ls
+  584  git add . ; git commit -m "14-DynamicBlock"; git push
+  585  ls
+  586  mkdir 15-Modules
+  587  cd 15-Modules/
+  588  ls
+  589  mkdir exp1
+  590  ls
+  591  cd exp1/
+  592  ls
+  593  mkdir modules/ec2
+  594  mkdir modules/ec2 =p 
+  595  mkdir modules/ec2 -p 
+  596  ls
+  597  rm -rf =p
+  598  ls
+  599  apt-get install tree -y 
+  600  ls
+  601  cd modules/
+  602  ls
+  603  cd ec2/
+  604  ls
+  605  vim main.tf
+  606  ls
+  607  vim providers.tf
+  608  ls
+  609  cat main.tf 
+  610  cat providers.tf 
+  611  vim variables.tf
+  612  ls
+  613  cd ..
+  614  ls
+  615  cd ..
+  616  ls
+  617  tree . 
+  618  ls
+  619  vim modules.tf 
+  620  ls
+  621  terraform validate
+  622  terraform init 
+  623  ls
+  624  rm -rf .terraform 
+  625  ls -ltr ../../13-DataSource/exp1/.terraform . 
+  626  cp -rf  ../../13-DataSource/exp1/.terraform . 
+  627  ls
+  628  ls -a 
+  629  terraform init 
+  630  terraform plan 
+  631  terraform apply 
+  632  ls
+  633  vim modules
+  634  vim modules.tf 
+  635  terraform init 
+  636  terraform apply --auto-approve
+  637  terraform destroy  --auto-approve
+  638  ls
+  639  vim modules.tf 
+  640  terraform plan 
+  641  ls
+  642  vim modules.tf 
+  643  ls
+  644  vim variable.tf 
+  645  ls
+  646  terraform plan 
+  647  ls
+  648  vim variable.tf 
+  649  vim modules.tf 
+  650  terraform init 
+  651  terraform apply --auto-approve 
+  652  terraform destroy --auto-approve
+  653  cd ../../
+  654  ls
+  655  git add . ; git commit -m "15-Modules"; git push
+  656  ls
+  657  cd 15-Modules/
+  658  ls
+  659  cd exp1/
+  660  ls
+  661  terraform plan 
+  662  cat variable.tf 
+  663  terraform plan -var="frontend_instance_count=1"  -var="backend_instance_count=5"
+  664  terraform plan -var="frontend_instance_count=1"  -var="backend_instance_count=1"
+  665  history 
+  666  ls
+  667  vim README.md
+  668  cd ../../
+  669  git add . ; git commit -m "15-Modules"; git push
+  670  ls
+  671  cd 15-Modules/
+  672  ls
+  673  mkdir exp2
+  674  ;s
+  675  ls
+  676  cd exp2/
+  677  ls
+  678  mkdir aws_instances
+  679  ls
+  680  cd aws_instances/
+  681  ls
+  682  cp -rf ../../exp1/modules/ec2/providers.tf . 
+  683  ls
+  684  vim main.tf 
+  685  ls
+  686  vim outputs.tf
+  687  ls
+  688  cat main.tf 
+  689  ls
+  690  vim variable.tf
+  691  ls
+  692  cat main.tf 
+  693  vim variable.tf 
+  694  ls
+  695  vim variable.tf
+  696  ls
+  697  cd ..
+  698  ls
+  699  vim modules.tf
+  700  ls
+  701  cp -rf ../exp1/.terraform . 
+  702  ls
+  703  terraform init 
+  704  terraform plan 
+  705  ls
+  706  vim aws_instances/main.tf 
+  707  terraform plan 
+  708  ls
+  709  vim modules.tf 
+  710  terraform init 
+  711  terraform apply --auto-approve
+  712  ls
+  713  vim aws_instances/variable.tf 
+  714  cat aws_instances/providers.tf 
+  715  ls
+  716  vim aws_instances/variable.tf 
+  717  terraform apply --auto-approve
+  718  terraform destroy  --auto-approve
+  719  ls
+  720  cd ../../
+  721  ls
+  722  git add . ; git commit -m "15-Modules-exp2"; git push
+  723  ls
+  724  mkdir 16-External-Modules
+  725  cd 16-External-Modules/
+  726  ls
+  727  vim providers.tf 
+  728  vim modules.tf 
+  729  ls
+  730  vim modules.tf 
+  731  ls
+  732  terraform init 
+  733  ls 
+  734  ls -a
+  735  cd .terraform/
+  736  ls
+  737  cd modules/
+  738  ls
+  739  cd ec2_cluster/
+  740  ls
+  741  cat main.tf 
+  742  ls
+  743  cd ..
+  744  l
+  745  cd ..
+  746  ls
+  747  cd ..
+  748  ls
+  749  terraform apply 
+  750  vim modules.tf 
+  751  terraform apply --auto-approve
+  752  terraform destroy  --auto-approve
+  753  ls
+  754  cd ../../
+  755  ls
+  756  cd - 
+  757  ls
+  758  cd ..
+  759  ls
+  760  git add . ; git commit -m "16-External-Modules"; git push
+  761  ls
+  762  mkdir 17-Backend-&-RemoteState
+  763  mkdir 17-Backend-and-RemoteState
+  764  ls
+  765  rm 17-Backend-
+  766  rm -rf 17-Backend-
+  767  ls
+  768  cp -rf 13-DataSource/exp1/datasource.tf 17-Backend-and-RemoteState
+  769  ls
+  770  cd 17-Backend-and-RemoteState/
+  771  l
+  772  mkdir exp1-local-backend
+  773  pwd
+  774  cd exp1-local-backend/
+  775  ls
+  776  cp -rf ../datasource.tf local-backend.tf
+  777  ls
+  778  vim local-backend.tf 
+  779  ls
+  780  terraform init 
+  781  ls
+  782  ls -a 
+  783  terraform apply 
+  784  ls
+  785  cd ..
+  786  ls
+  787  mkdir gopi-home-dir
+  788  ls
+  789  cd gopi-home-dir/
+  790  ls
+  791  cp -rf ../datasource.tf . 
+  792  ls
+  793  terraform init 
+  794  terraform apply --auto--approve 
+  795  terraform apply --auto-approve 
+  796  terraform destroy --auto-approve 
+  797  ls
+  798  rm -rf terraform.tfstate
+  799  rm -rf terraform.tfstate* 
+  800  ls
+  801  cd ..
+  802  ls
+  803  cd exp1-local-backend/
+  804  terraform destroy --auto-approve 
+  805  ls
+  806  rm -rf terraform.tfstate* 
+  807  ls
+  808  mkdir -p /var/tmp/terrform-local-backend 
+  809  touch /var/tmp/terrform-local-backend/terraform.tfstate
+  810  ls
+  811  ls -ltr /var/tmp/terrform-local-backend/terraform.tfstate 
+  812  cat /var/tmp/terrform-local-backend/terraform.tfstate
+  813  ls
+  814  vim local-backend.tf 
+  815  ls
+  816  vim ../gopi-home-dir/datasource.tf 
+  817  cat  local-backend.tf 
+  818  vim ../gopi-home-dir/datasource.tf 
+  819  ls
+  820  terraform init 
+  821  terraform apply --auto-approve 
+  822  terraform show 
+  823  cat /var/tmp/terrform-local-backend/terraform.tfstate
+  824  ls
+  825  ls -a 
+  826  cd ..
+  827  ls
+  828  cd gopi-home-dir/
+  829  ls
+  830  terraform apply --auto-approve 
+  831  terraform init 
+  832  terraform apply --auto-approve 
+  833  cd ..
+  834  ls
+  835  cd ..
+  836  ls
+  837  git add . ; git commit -m "17-Backend-and-RemoteState"; git push
+  838  ls
+  839  cd 17-Backend-and-RemoteState/exp1-local-backend/
+  840  terraform destroy --auto-approve 
+  841  ls
+  842  cd ..
+  843  ls
+  844  mkdir Local
+  845  mkdir Remote
+  846  l
+  847  mv exp1-local-backend gopi-home-dir Local/
+  848  ls
+  849  mv datasource.tf Remote/
+  850  ls
+  851  cd Local/
+  852  ls
+  853  c d..
+  854  lcd .
+  855  cd ..
+  856  ls
+  857  cd Remote/
+  858  ls
+  859  rm -rf datasource.tf 
+  860  ls
+  861  cp -rf ../Local/exp1-local-backend/local-backend.tf . 
+  862  ls
+  863  cp -rf local-backend.tf providers.tf
+  864  cp -rf local-backend.tf variable.tf
+  865  cp -rf local-backend.tf main.tf
+  866  cp -rf local-backend.tf backend.tf
+  867  ls
+  868  rm -rf local-backend.tf 
+  869  ls
+  870  vim main.tf 
+  871  vim variable.tf 
+  872  ls
+  873  cat variable.tf 
+  874  vim providers.tf 
+  875  ls
+  876  vim backend.tf 
+  877  ls
+  878  terraform init 
+  879  terraform apply --auto-approve
+  880  ls
+  881  cd ..
+  882  ls
+  883  cd ..
+  884  ls
+  885  git add . ; git commit -m "17-Backend-and-RemoteState-2"; git push
+  886  cd - 
+  887  ls
+  888  cd Remote/
+  889  ls
+  890  terraform destroy 
+  891  ls
+  892  vim backend.tf 
+  893  ls
+  894  terraform init 
+  895  terraform apply --auto-approve
+  896  ls
+  897  terraform destroy --auto-approve
+  898  ls
+  899  cd ..
+  900  ls
+  901  cd ..
+  902  ls
+  903  git add . ; git commit -m "17-Backend-and-RemoteState-S3-bucket"; git push
+  904  ls
+  905  mkdir 18-Workspaces
+  906  ls
+  907  cd 18-Workspaces/
+  908  ls
+  909  cp -rf ../17-Backend-and-RemoteState/Remote/providers.tf . 
+  910  cp -rf ../17-Backend-and-RemoteState/Remote/backend.tf . 
+  911  ls
+  912  cat backend.tf 
+  913  ls
+  914  cat providers.tf 
+  915  terraform workspace list 
+  916  terraform init 
+  917  terraform workspace list 
+  918  cd ../04-Graphviz/
+  919  ls
+  920  cd ..
+  921  ls
+  922  cd 03-Resources/
+  923  ls
+  924  terraform workspace list 
+  925  cd - 
+  926  ls
+  927  cd 18-Workspaces/
+  928  ls
+  929  terraform workspace list 
+  930  terraform workspace new dev
+  931  terraform workspace list 
+  932  ls 
+  933  ls -a 
+  934  ls
+  935  terraform workspace list 
+  936  terraform workspace select default
+  937  ls
+  938  terraform workspace list 
+  939  ls
+  940  vim variables.tf 
+  941  ls
+  942  vim main.tf 
+  943  ls
+  944  terraform workspace list 
+  945  vim variables.tf 
+  946  terraform workspace list 
+  947  terraform plan 
+  948  vim variables.tf 
+  949  cat ../17-Backend-and-RemoteState/Remote/variable.tf 
+  950  ls
+  951  vim variables.tf 
+  952  terraform plan 
+  953  terraform workspace select dev
+  954  terraform plan 
+  955  terraform apply --auto-approve 
+  956  ls
+  957  ls -a 
+  958  terraform workspace select default
+  959  terraform apply --auto-approve 
+  960  terraform workspace list 
+  961  terraform workspace new prod
+  962  terraform workspace new mindtree
+  963  ls
+  964  vim variables.tf 
+  965  ls
+  966  vim main.tf 
+  967  ls
+  968  terraform workspace select default 
+  969  terraform destroy  --auto-approve 
+  970  terraform workspace select dev
+  971  terraform destroy  --auto-approve 
+  972  ls
+  973  vim main.tf 
+  974  terraform workspace list 
+  975  terraform plan 
+  976  terraform workspace select default
+  977  terraform plan 
+  978  vim variables.tf 
+  979  terraform plan 
+  980  terraform workspace select prod
+  981  terraform plan 
+  982  terraform workspace select mindtree 
+  983  terraform plan 
+  984  cd ..
+  985  ls
+  986  git add . ; git commit -m "18-Workspaces"; git push
+  987  ls
+  988  cd 18-Workspaces/
+  989  ls
+  990  vim variables.tf 
+  991  ls
+  992  vim main.tf 
+  993  terraform validate
+  994  terraform plan 
+  995  ls
+  996  cat variables.tf 
+  997  terraform workspace list  
+  998  cat main.tf 
+  999  terraform plan 
+ 1000  instance_count
+ 1001  terraform workspace select default
+ 1002  terraform plan 
+ 1003  cd ../
+ 1004  git add . ; git commit -m "18-Workspaces"; git push
+ 1005  ls
+ 1006  mkdir 19-Software-Provisioning
+ 1007  ls
+ 1008  cd 19-Software-Provisioning/
+ 1009  ls
+ 1010  cp -rf ../18-Workspaces/*.tf 
+ 1011  cp -rf ../18-Workspaces/*.tf  .
+ 1012  ls
+ 1013  vim variables.tf 
+ 1014  vim /root/.ssh/amitvashist-terraform.pem
+ 1015  chmod 400 /root/.ssh/amitvashist-terraform.pem
+ 1016  ls
+ 1017  vim main.tf 
+ 1018  ls
+ 1019  cat 1 
+ 1020  terraform fmt main.tf 
+ 1021  cat main.tf 
+ 1022  ls
+ 1023  rm 1
+ 1024  ls
+ 1025  terraform validate
+ 1026  cp -rf ../18-Workspaces/.terraform . 
+ 1027  terraform init 
+ 1028  terraform plan 
+ 1029  cat variables.tf 
+ 1030  ls
+ 1031  vim main.tf 
+ 1032  terraform plan 
+ 1033  ls
+ 1034  vim variables.tf 
+ 1035  vim main.tf 
+ 1036  ls
+ 1037  mkdir frontend
+ 1038  vim frontend/run_frontend.sh 
+ 1039  ls
+ 1040  terraform workspace list 
+ 1041  terraform workspace select dev 
+ 1042  ls
+ 1043  terraform plan 
+ 1044  terraform apply --auto-approve 
+ 1045  ls
+ 1046  cd ..
+ 1047  ls
+ 1048  git add . ; git commit -m "19-Software-Provisioning"; git push
+ 1049  ls
+ 1050  cd 19-Software-Provisioning/
+ 1051  ls
+ 1052  vim variables.tf 
+ 1053  cd ..
+ 1054  git add . ; git commit -m "19-Software-Provisioning"; git push
+ 1055  cd - 
+ 1056  terraform destroy  --auto-approve 
+ 1057  ls
+ 1058  cat frontend/
+ 1059  cat frontend/run_frontend.sh 
+ 1060  cd ..
+ 1061  l
+ 1062  ls
+ 1063  mkdir 20-Ansible
+ 1064  ls
+ 1065  cd 20-Ansible/
+ 1066  ls
+ 1067  apt-get install ansible -y 
+ 1068  ls
+ 1069  ansible --version 
+ 1070  ls
+ 1071  mkdir 01-Inventory
+ 1072  ls
+ 1073  cd 01-Inventory/
+ 1074  ls
+ 1075  vim inventory
+ 1076  ip addr 
+ 1077  ls
+ 1078  ansible all -i inventory -m ping -u vagrant -k 
+ 1079  apt-get install sshpass -y 
+ 1080  ansible all -i inventory -m ping -u vagrant -k 
+ 1081  ssh vagrant@172.31.0.100
+ 1082  ansible all -i inventory -m ping -u vagrant -k 
+ 1083  cat /root/.ssh/known_hosts 
+ 1084  df -h 
+ 1085  ansible all -i inventory -m command -a 'df -h' -u vagrant -k 
+ 1086  ls
+ 1087  cd ..
+ 1088  ls
+ 1089  history 
+ 1090  history | grep -i ansible > Ansible.txt
+ 1091  cat Ansible.txt 
+ 1092  cd ..
+ 1093  ls
+ 1094  vim 20-Ansible/Ansible.txt 
+ 1095  ls
+ 1096  git add . ; git commit -m "19-Software-Provisioning"; git push
+ 1097  ls
+ 1098  history > Day3_History
