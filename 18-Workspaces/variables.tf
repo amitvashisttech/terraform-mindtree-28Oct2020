@@ -28,3 +28,16 @@ variable "instance_type" {
   }
 
 }
+
+
+
+variable "instance_count" { 
+  type = map
+  default = { 
+      default = "1"
+      dev     = "2"
+      prod    = "5"
+      mindtree = "7"
+  }
+
+}
