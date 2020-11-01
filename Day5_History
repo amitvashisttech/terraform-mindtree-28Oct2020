@@ -1,0 +1,1000 @@
+  771  l
+  772  mkdir exp1-local-backend
+  773  pwd
+  774  cd exp1-local-backend/
+  775  ls
+  776  cp -rf ../datasource.tf local-backend.tf
+  777  ls
+  778  vim local-backend.tf 
+  779  ls
+  780  terraform init 
+  781  ls
+  782  ls -a 
+  783  terraform apply 
+  784  ls
+  785  cd ..
+  786  ls
+  787  mkdir gopi-home-dir
+  788  ls
+  789  cd gopi-home-dir/
+  790  ls
+  791  cp -rf ../datasource.tf . 
+  792  ls
+  793  terraform init 
+  794  terraform apply --auto--approve 
+  795  terraform apply --auto-approve 
+  796  terraform destroy --auto-approve 
+  797  ls
+  798  rm -rf terraform.tfstate
+  799  rm -rf terraform.tfstate* 
+  800  ls
+  801  cd ..
+  802  ls
+  803  cd exp1-local-backend/
+  804  terraform destroy --auto-approve 
+  805  ls
+  806  rm -rf terraform.tfstate* 
+  807  ls
+  808  mkdir -p /var/tmp/terrform-local-backend 
+  809  touch /var/tmp/terrform-local-backend/terraform.tfstate
+  810  ls
+  811  ls -ltr /var/tmp/terrform-local-backend/terraform.tfstate 
+  812  cat /var/tmp/terrform-local-backend/terraform.tfstate
+  813  ls
+  814  vim local-backend.tf 
+  815  ls
+  816  vim ../gopi-home-dir/datasource.tf 
+  817  cat  local-backend.tf 
+  818  vim ../gopi-home-dir/datasource.tf 
+  819  ls
+  820  terraform init 
+  821  terraform apply --auto-approve 
+  822  terraform show 
+  823  cat /var/tmp/terrform-local-backend/terraform.tfstate
+  824  ls
+  825  ls -a 
+  826  cd ..
+  827  ls
+  828  cd gopi-home-dir/
+  829  ls
+  830  terraform apply --auto-approve 
+  831  terraform init 
+  832  terraform apply --auto-approve 
+  833  cd ..
+  834  ls
+  835  cd ..
+  836  ls
+  837  git add . ; git commit -m "17-Backend-and-RemoteState"; git push
+  838  ls
+  839  cd 17-Backend-and-RemoteState/exp1-local-backend/
+  840  terraform destroy --auto-approve 
+  841  ls
+  842  cd ..
+  843  ls
+  844  mkdir Local
+  845  mkdir Remote
+  846  l
+  847  mv exp1-local-backend gopi-home-dir Local/
+  848  ls
+  849  mv datasource.tf Remote/
+  850  ls
+  851  cd Local/
+  852  ls
+  853  c d..
+  854  lcd .
+  855  cd ..
+  856  ls
+  857  cd Remote/
+  858  ls
+  859  rm -rf datasource.tf 
+  860  ls
+  861  cp -rf ../Local/exp1-local-backend/local-backend.tf . 
+  862  ls
+  863  cp -rf local-backend.tf providers.tf
+  864  cp -rf local-backend.tf variable.tf
+  865  cp -rf local-backend.tf main.tf
+  866  cp -rf local-backend.tf backend.tf
+  867  ls
+  868  rm -rf local-backend.tf 
+  869  ls
+  870  vim main.tf 
+  871  vim variable.tf 
+  872  ls
+  873  cat variable.tf 
+  874  vim providers.tf 
+  875  ls
+  876  vim backend.tf 
+  877  ls
+  878  terraform init 
+  879  terraform apply --auto-approve
+  880  ls
+  881  cd ..
+  882  ls
+  883  cd ..
+  884  ls
+  885  git add . ; git commit -m "17-Backend-and-RemoteState-2"; git push
+  886  cd - 
+  887  ls
+  888  cd Remote/
+  889  ls
+  890  terraform destroy 
+  891  ls
+  892  vim backend.tf 
+  893  ls
+  894  terraform init 
+  895  terraform apply --auto-approve
+  896  ls
+  897  terraform destroy --auto-approve
+  898  ls
+  899  cd ..
+  900  ls
+  901  cd ..
+  902  ls
+  903  git add . ; git commit -m "17-Backend-and-RemoteState-S3-bucket"; git push
+  904  ls
+  905  mkdir 18-Workspaces
+  906  ls
+  907  cd 18-Workspaces/
+  908  ls
+  909  cp -rf ../17-Backend-and-RemoteState/Remote/providers.tf . 
+  910  cp -rf ../17-Backend-and-RemoteState/Remote/backend.tf . 
+  911  ls
+  912  cat backend.tf 
+  913  ls
+  914  cat providers.tf 
+  915  terraform workspace list 
+  916  terraform init 
+  917  terraform workspace list 
+  918  cd ../04-Graphviz/
+  919  ls
+  920  cd ..
+  921  ls
+  922  cd 03-Resources/
+  923  ls
+  924  terraform workspace list 
+  925  cd - 
+  926  ls
+  927  cd 18-Workspaces/
+  928  ls
+  929  terraform workspace list 
+  930  terraform workspace new dev
+  931  terraform workspace list 
+  932  ls 
+  933  ls -a 
+  934  ls
+  935  terraform workspace list 
+  936  terraform workspace select default
+  937  ls
+  938  terraform workspace list 
+  939  ls
+  940  vim variables.tf 
+  941  ls
+  942  vim main.tf 
+  943  ls
+  944  terraform workspace list 
+  945  vim variables.tf 
+  946  terraform workspace list 
+  947  terraform plan 
+  948  vim variables.tf 
+  949  cat ../17-Backend-and-RemoteState/Remote/variable.tf 
+  950  ls
+  951  vim variables.tf 
+  952  terraform plan 
+  953  terraform workspace select dev
+  954  terraform plan 
+  955  terraform apply --auto-approve 
+  956  ls
+  957  ls -a 
+  958  terraform workspace select default
+  959  terraform apply --auto-approve 
+  960  terraform workspace list 
+  961  terraform workspace new prod
+  962  terraform workspace new mindtree
+  963  ls
+  964  vim variables.tf 
+  965  ls
+  966  vim main.tf 
+  967  ls
+  968  terraform workspace select default 
+  969  terraform destroy  --auto-approve 
+  970  terraform workspace select dev
+  971  terraform destroy  --auto-approve 
+  972  ls
+  973  vim main.tf 
+  974  terraform workspace list 
+  975  terraform plan 
+  976  terraform workspace select default
+  977  terraform plan 
+  978  vim variables.tf 
+  979  terraform plan 
+  980  terraform workspace select prod
+  981  terraform plan 
+  982  terraform workspace select mindtree 
+  983  terraform plan 
+  984  cd ..
+  985  ls
+  986  git add . ; git commit -m "18-Workspaces"; git push
+  987  ls
+  988  cd 18-Workspaces/
+  989  ls
+  990  vim variables.tf 
+  991  ls
+  992  vim main.tf 
+  993  terraform validate
+  994  terraform plan 
+  995  ls
+  996  cat variables.tf 
+  997  terraform workspace list  
+  998  cat main.tf 
+  999  terraform plan 
+ 1000  instance_count
+ 1001  terraform workspace select default
+ 1002  terraform plan 
+ 1003  cd ../
+ 1004  git add . ; git commit -m "18-Workspaces"; git push
+ 1005  ls
+ 1006  mkdir 19-Software-Provisioning
+ 1007  ls
+ 1008  cd 19-Software-Provisioning/
+ 1009  ls
+ 1010  cp -rf ../18-Workspaces/*.tf 
+ 1011  cp -rf ../18-Workspaces/*.tf  .
+ 1012  ls
+ 1013  vim variables.tf 
+ 1014  vim /root/.ssh/amitvashist-terraform.pem
+ 1015  chmod 400 /root/.ssh/amitvashist-terraform.pem
+ 1016  ls
+ 1017  vim main.tf 
+ 1018  ls
+ 1019  cat 1 
+ 1020  terraform fmt main.tf 
+ 1021  cat main.tf 
+ 1022  ls
+ 1023  rm 1
+ 1024  ls
+ 1025  terraform validate
+ 1026  cp -rf ../18-Workspaces/.terraform . 
+ 1027  terraform init 
+ 1028  terraform plan 
+ 1029  cat variables.tf 
+ 1030  ls
+ 1031  vim main.tf 
+ 1032  terraform plan 
+ 1033  ls
+ 1034  vim variables.tf 
+ 1035  vim main.tf 
+ 1036  ls
+ 1037  mkdir frontend
+ 1038  vim frontend/run_frontend.sh 
+ 1039  ls
+ 1040  terraform workspace list 
+ 1041  terraform workspace select dev 
+ 1042  ls
+ 1043  terraform plan 
+ 1044  terraform apply --auto-approve 
+ 1045  ls
+ 1046  cd ..
+ 1047  ls
+ 1048  git add . ; git commit -m "19-Software-Provisioning"; git push
+ 1049  ls
+ 1050  cd 19-Software-Provisioning/
+ 1051  ls
+ 1052  vim variables.tf 
+ 1053  cd ..
+ 1054  git add . ; git commit -m "19-Software-Provisioning"; git push
+ 1055  cd - 
+ 1056  terraform destroy  --auto-approve 
+ 1057  ls
+ 1058  cat frontend/
+ 1059  cat frontend/run_frontend.sh 
+ 1060  cd ..
+ 1061  l
+ 1062  ls
+ 1063  mkdir 20-Ansible
+ 1064  ls
+ 1065  cd 20-Ansible/
+ 1066  ls
+ 1067  apt-get install ansible -y 
+ 1068  ls
+ 1069  ansible --version 
+ 1070  ls
+ 1071  mkdir 01-Inventory
+ 1072  ls
+ 1073  cd 01-Inventory/
+ 1074  ls
+ 1075  vim inventory
+ 1076  ip addr 
+ 1077  ls
+ 1078  ansible all -i inventory -m ping -u vagrant -k 
+ 1079  apt-get install sshpass -y 
+ 1080  ansible all -i inventory -m ping -u vagrant -k 
+ 1081  ssh vagrant@172.31.0.100
+ 1082  ansible all -i inventory -m ping -u vagrant -k 
+ 1083  cat /root/.ssh/known_hosts 
+ 1084  df -h 
+ 1085  ansible all -i inventory -m command -a 'df -h' -u vagrant -k 
+ 1086  ls
+ 1087  cd ..
+ 1088  ls
+ 1089  history 
+ 1090  history | grep -i ansible > Ansible.txt
+ 1091  cat Ansible.txt 
+ 1092  cd ..
+ 1093  ls
+ 1094  vim 20-Ansible/Ansible.txt 
+ 1095  ls
+ 1096  git add . ; git commit -m "19-Software-Provisioning"; git push
+ 1097  ls
+ 1098  history > Day3_History
+ 1099  git add . ; git commit -m "19-Software-Provisioning"; git push
+ 1100  ls
+ 1101  cd 20-Ansible/
+ 1102  ls
+ 1103  cd 01-Inventory/
+ 1104  ls
+ 1105  cat inventory 
+ 1106  ls
+ 1107  ansible-doc  -l 
+ 1108  ansible-doc  apt
+ 1109  lds
+ 1110  ls
+ 1111  cd ..
+ 1112  ls
+ 1113  mv Ansible.txt 01-Inventory/
+ 1114  ls
+ 1115  mkdir 02-Playbook
+ 1116  ls
+ 1117  cd 02-Playbook/
+ 1118  ls
+ 1119  vim inventory 
+ 1120  ls
+ 1121  ansible all -i inventory -m ping -u vagrant -k 
+ 1122  ls
+ 1123  vim inventory 
+ 1124  ansible web -i inventory -m ping -u vagrant -k 
+ 1125  ansible db -i inventory -m ping -u vagrant -k 
+ 1126  ansible ansible -i inventory -m ping -u vagrant -k 
+ 1127  vim inventory 
+ 1128  ansible ansible -i inventory -m ping -u vagrant -k 
+ 1129  ls
+ 1130  vim inventory 
+ 1131  ansible prod -i inventory -m ping -u vagrant -k 
+ 1132  ansible 'prod:&web' -i inventory -m ping -u vagrant -k 
+ 1133  ansible 'prod:&db' -i inventory -m ping -u vagrant -k 
+ 1134  ansible 'prod:db' -i inventory -m ping -u vagrant -k 
+ 1135  ls
+ 1136  cat inventory 
+ 1137  history 
+ 1138  ansible 'prod:db' -i inventory -m ping -u vagrant -k 
+ 1139  ansible 'prod:&db' -i inventory -m ping -u vagrant -k 
+ 1140  ansible 'prod' -i inventory -m ping -u vagrant -k 
+ 1141  ls
+ 1142  ansible --version 
+ 1143  vim /etc/ansible/ansible.cfg
+ 1144  ls
+ 1145  touch ansible.cfg
+ 1146  grep -i host_key_checking /etc/ansible/ansible.cfg 
+ 1147  vim ansible.cfg 
+ 1148  ansible 'prod' -i inventory -m ping -u vagrant -k 
+ 1149  cat /root/.ssh/known_hosts 
+ 1150  cat /root/.ssh/known_hosts | wc -l 
+ 1151  ansible 'prod' -i inventory -m ping -u vagrant -k 
+ 1152  cat /root/.ssh/known_hosts | wc -l 
+ 1153  cat /root/.ssh/known_hosts 
+ 1154  ansible 'prod' -i inventory -m ping -u vagrant -k 
+ 1155  ls
+ 1156  vim ansible.cfg 
+ 1157  ls
+ 1158  mv inventory hosts
+ 1159  ls
+ 1160  ansible 'prod' -m ping -u vagrant -k 
+ 1161  vim hosts 
+ 1162  ansible 'prod' -m ping
+ 1163  vim backend-playbook.yaml
+ 1164  ls
+ 1165  ansible-playbook backend-playbook.yaml 
+ 1166  > backend-playbook.yaml 
+ 1167  vi backend-playbook.yaml
+ 1168  ansible-playbook backend-playbook.yaml 
+ 1169  ls
+ 1170  cd ..
+ 1171  ls
+ 1172  cd ..
+ 1173  ls
+ 1174  git add . ; git commit -m "20-Ansible"; git push
+ 1175  ls
+ 1176  cd 20-Ansible/
+ 1177  ls
+ 1178  02-Playbook/
+ 1179  ls
+ 1180  cd 02-Playbook/
+ 1181  ls
+ 1182  vim backend-playbook.yaml 
+ 1183  cat hosts 
+ 1184  history 
+ 1185  ls
+ 1186  cd ..
+ 1187  ls
+ 1188  cd ..
+ 1189  ls
+ 1190  history > Day4_History
+ 1191  git add . ; git commit -m "20-Ansible"; git push
+ 1192  ls
+ 1193  cd 20-Ansible/
+ 1194  ls
+ 1195  cd 02-Playbook/
+ 1196  ls
+ 1197  vim backend-playbook.yaml 
+ 1198  ls
+ 1199  vim hosts 
+ 1200  ls
+ 1201  vim backend-playbook.yaml 
+ 1202  ls
+ 1203  cp -rf backend-playbook.yaml backend-playbook-old.yaml 
+ 1204  ls
+ 1205  vim backend-playbook.yaml 
+ 1206  ls
+ 1207  cat backend-playbook.yaml 
+ 1208  mkdir templates
+ 1209  vim templates/info.j2
+ 1210  ls
+ 1211  ansible-playbook backend-playbook.yaml 
+ 1212  vim templates/info.j2
+ 1213  ansible-playbook backend-playbook.yaml 
+ 1214  ls
+ 1215  cat backend-playbook.yaml 
+ 1216  ls
+ 1217  vim templates/info.j2 
+ 1218  ansible-playbook backend-playbook.yaml 
+ 1219  vim templates/info.j2 
+ 1220  ls
+ 1221  cd ..
+ 1222  ls
+ 1223  cd ..ls
+ 1224  cd ..
+ 1225  ls
+ 1226  git add . ; git commit -m "20-Ansible"; git push
+ 1227  ls
+ 1228  cp -rf 19-Software-Provisioning 21-Software-Provisioning-Ansible
+ 1229  ls
+ 1230  cd 21-Software-Provisioning-Ansible/
+ 1231  ls
+ 1232  vim main.tf 
+ 1233  ls
+ 1234  cd frontend/
+ 1235  ls
+ 1236  cp -rf run_frontend.sh run_frontend.sh.org
+ 1237  ls
+ 1238  vim run_frontend.sh
+ 1239  ls
+ 1240  cd ..
+ 1241  ls
+ 1242  cp -rf ../20-Ansible/02-Playbook ansible
+ 1243  ls
+ 1244  cp -rf ansible/ansible.cfg . 
+ 1245  ls
+ 1246  cd ansible/
+ 1247  ls
+ 1248  cp -rf backend-playbook.yaml setup-backend.yaml
+ 1249  ls
+ 1250  vim ansible.cfg 
+ 1251  ls
+ 1252  cd ..
+ 1253  ls
+ 1254  vim ansible.cfg 
+ 1255  ls
+ 1256  cd ansible/
+ 1257  ls
+ 1258  vim setup-backend.yaml 
+ 1259  ls
+ 1260  mkdir group_vars
+ 1261  ls
+ 1262  vim all.yaml
+ 1263  ls
+ 1264  cd ..
+ 1265  ls
+ 1266  cp -rf ../19-Software-Provisioning/.terraform . 
+ 1267  ls
+ 1268  terraform validate
+ 1269  terraform init 
+ 1270  terraform validate
+ 1271  ls
+ 1272  vim main.tf 
+ 1273  terraform validate
+ 1274  ls
+ 1275  terraform apply --auto-approve
+ 1276  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '54.157.11.115,' ./ansible/setup-backend.yaml -v
+ 1277  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '54.157.11.115' ./ansible/setup-backend.yaml -v
+ 1278  ssh -i /root/.ssh/amitvashist-terraform.pem ec2-user@54.157.11.115
+ 1279  ls
+ 1280  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '54.157.11.115,' ./ansible/setup-backend.yaml -v
+ 1281  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '54.157.11.115,' ./ansible/setup-backend.yaml -vvvv
+ 1282  ls
+ 1283  cd ansible/
+ 1284  ls
+ 1285  cd group_vars/
+ 1286  ls
+ 1287  cd ..
+ 1288  ls
+ 1289  cat all.yaml 
+ 1290  ls
+ 1291  mv all.yaml group_vars/
+ 1292  ls
+ 1293  cd ..
+ 1294  ls
+ 1295  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '54.157.11.115,' ./ansible/setup-backend.yaml 
+ 1296  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '54.157.11.115,' ./ansible/setup-backend.yaml -vvv
+ 1297  vim ansible/group_vars/all.yaml 
+ 1298  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '54.157.11.115,' ./ansible/setup-backend.yaml -vvv
+ 1299  ls
+ 1300  terraform destroy --auto-approve 
+ 1301  terraform apply --auto-approve 
+ 1302  ls
+ 1303  cd ansible/
+ 1304  ls
+ 1305  vim setup-backend.yaml 
+ 1306  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '100.25.179.199,' ./ansible/setup-backend.yaml -vvv
+ 1307  cd ..
+ 1308  ansible-playbook -e sshKey=/root/.ssh/amitvashist-terraform.pem -i '100.25.179.199,' ./ansible/setup-backend.yaml 
+ 1309  terraform destroy --auto-approve 
+ 1310  ls
+ 1311  cd ansible/
+ 1312  ls
+ 1313  cat hosts 
+ 1314  ls
+ 1315  cat ansible.cfg 
+ 1316  ls
+ 1317  cat setup-backend.yaml 
+ 1318  ls
+ 1319  cat setup-backend.yaml 
+ 1320  ls
+ 1321  cat hosts 
+ 1322  cat group_vars/all.yaml 
+ 1323  ls
+ 1324  cd ..
+ 1325  ls
+ 1326  cat frontend/run_frontend.sh
+ 1327  vim main.tf 
+ 1328  cat ansible/group_vars/all.yaml 
+ 1329  vim main.tf 
+ 1330  ls
+ 1331  cd ..
+ 1332  ls
+ 1333  git add . ; git commit -m "21-Software-Provisioning-Ansible"; git push
+ 1334  nls
+ 1335  ls
+ 1336  mkdir 22-VPC
+ 1337  ls
+ 1338  cd 22-VPC/
+ 1339  ls
+ 1340  cp -rf ../21-Software-Provisioning-Ansible/backend.tf . 
+ 1341  cp -rf ../21-Software-Provisioning-Ansible/providers.tf .
+ 1342  ls
+ 1343  vim vpc.tf 
+ 1344  ls
+ 1345  vim vpc.tf 
+ 1346  ls
+ 1347  terraform init 
+ 1348  ls
+ 1349  terraform apply --auto-approve
+ 1350  ls
+ 1351  cp -rf ../21-Software-Provisioning-Ansible/variables.tf . 
+ 1352  terraform apply --auto-approve
+ 1353  terraform destroy --auto-approve
+ 1354  ls
+ 1355  vim variables.tf 
+ 1356  ls
+ 1357  cd ..
+ 1358  ls
+ 1359  cat 21-Software-Provisioning-Ansible/main.tf 
+ 1360  ls
+ 1361  cp -rf 21-Software-Provisioning-Ansible 23-EBS
+ 1362  ls
+ 1363  cd 23-EBS/
+ 1364  ls
+ 1365  rm -rf ansible ansible.cfg 
+ 1366  ls
+ 1367  rm -rf frontend
+ 1368  ls
+ 1369  vim main.tf 
+ 1370  ls
+ 1371  cp -rf ../22-VPC/.terraform . 
+ 1372  ls
+ 1373  terraform init 
+ 1374  terraform apply --auto-approve
+ 1375  vim main.tf 
+ 1376  terraform apply --auto-approve
+ 1377  terraform show 
+ 1378  ls
+ 1379  ssh -i /root/.ssh/amitvashist-terraform.pem ec2-user@18.207.148.18
+ 1380  terraform apply --auto-approve
+ 1381  ssh -i /root/.ssh/amitvashist-terraform.pem ec2-user@34.239.112.210
+ 1382  terraform destroy --auto-approve
+ 1383  ls
+ 1384  cd ..
+ 1385  cd - 
+ 1386  ls
+ 1387  cd ..
+ 1388  ls
+ 1389  cp -rf 23-EBS 24-IAM
+ 1390  ls
+ 1391  cd 24-IAM/
+ 1392  ls
+ 1393  > main.tf 
+ 1394  ls
+ 1395  vim variables.tf 
+ 1396  ls
+ 1397  vim main.tf 
+ 1398  ls
+ 1399  vim main.tf 
+ 1400  cat variables.tf 
+ 1401  vim main.tf 
+ 1402  ls
+ 1403  terraform init 
+ 1404  terraform apply --auto-approve
+ 1405  terraform destroy --auto-approve
+ 1406  ls
+ 1407  cd ..
+ 1408  ls
+ 1409  cp -rf 24-IAM 25-Route53
+ 1410  ls
+ 1411  cd 25-Route53/
+ 1412  ls
+ 1413  rm main.tf 
+ 1414  ls
+ 1415  vim variables.tf 
+ 1416  ls
+ 1417  vim dns.tf 
+ 1418* 
+ 1419  terraform apply --auto-approve
+ 1420  ls
+ 1421  vim dns.tf 
+ 1422  terraform apply --auto-approve
+ 1423  terraform destroy --auto-approve
+ 1424  ls
+ 1425  cd ..
+ 1426  ls
+ 1427  git add . ; git commit -m "25-Route53"; git push
+ 1428  ls
+ 1429  mkdir 26-CFT_To_Terraform
+ 1430  ls
+ 1431  cd 26-CFT_To_Terraform/
+ 1432  ls
+ 1433  vim 01-Network-Provision
+ 1434  mkidr 01-Network-Provision
+ 1435  mkdir 01-Network-Provision
+ 1436  ls
+ 1437  cd 01-Network-Provision/
+ 1438  ls
+ 1439  vim np.tf
+ 1440  terraform apply --auto-approve
+ 1441  terraform init 
+ 1442  terraform apply --auto-approve
+ 1443  terraform destroy --auto-approve
+ 1444  ls
+ 1445  cd ..
+ 1446  ls
+ 1447  mkdir 02-EC2-N-SG-Provision
+ 1448  ls
+ 1449  cd 02-EC2-N-SG-Provision/
+ 1450  ls
+ 1451  cp -rf ../01-Network-Provision/.terraform . 
+ 1452  ls
+ 1453  vim exmaple.yml
+ 1454  ls
+ 1455  cp -rf ../01-Network-Provision/np.tf main.tf
+ 1456  ls
+ 1457  vim main.tf 
+ 1458  ls
+ 1459  mv exmaple.yml example.yml
+ 1460  ls
+ 1461  cat main.tf 
+ 1462  terraform init 
+ 1463  terraform apply --auto-approve
+ 1464  ls
+ 1465  terraform destroy --auto-approve
+ 1466  ls
+ 1467  cd ..
+ 1468  ls
+ 1469  cd ..
+ 1470  ls
+ 1471  mkdir 27-GCP-K8s-Cluster
+ 1472  ls
+ 1473  cd 27-GCP-K8s-Cluster/
+ 1474  ls
+ 1475  vim README.md
+ 1476  ls
+ 1477  cd ..
+ 1478  ls
+ 1479  git add . ; git commit -m "26-CFT_To_Terraform"; git push
+ 1480  ls
+ 1481  cd 27-GCP-K8s-Cluster/
+ 1482  ls
+ 1483  mkdir kubernetes
+ 1484  ls
+ 1485  cd kubernetes/
+ 1486  ls
+ 1487  vim main.tf 
+ 1488  vim variable.tf
+ 1489  ls
+ 1490  vim providers.tf 
+ 1491  ls
+ 1492  cat providers.tf 
+ 1493  vim /root/.ssh/k8s-demo-project-sa.json
+ 1494  ls
+ 1495  cat variable.tf 
+ 1496  vi  variable.tf 
+ 1497  ls
+ 1498  vim main.tf 
+ 1499  ls
+ 1500  cd ..
+ 1501  ls
+ 1502  vim kube.tf 
+ 1503  ls
+ 1504  terraform init 
+ 1505  terraform apply --auto-approve
+ 1506  ls
+ 1507  terraform destroy  --auto-approve
+ 1508  ls
+ 1509  cd ..
+ 1510  ls
+ 1511  mkdir 28-K8s-Firt-App
+ 1512  ls
+ 1513  cd 28-K8s-Firt-App/
+ 1514  ls
+ 1515  vim deployment.tf 
+ 1516  ls
+ 1517  cd ..
+ 1518  ls
+ 1519  git add . ; git commit -m "28-K8s-Firt-App"; git push
+ 1520  ls
+ 1521  cd 27-GCP-K8s-Cluster/
+ 1522  ls
+ 1523  cd ..
+ 1524  ls
+ 1525  cd ls
+ 1526  ls
+ 1527  mkdir 29-Packer/01-Packer-Installation
+ 1528  mkdir 29-Packer/01-Packer-Installation -p 
+ 1529  ls
+ 1530  cd 29-Packer/
+ 1531  ls
+ 1532  cd 01-Packer-Installation/
+ 1533  ls
+ 1534  vim README.md
+ 1535  ls
+ 1536  cat README.md 
+ 1537  cd ../../
+ 1538  git add . ; git commit -m "01-Packer-Installation"; git push
+ 1539  apt-get install jq wget unzip -y 
+ 1540  wget https://releases.hashicorp.com/packer/1.5.6/packer_1.5.6_linux_amd64.zip -P /root/
+ 1541  cd /root
+ 1542  unzip packer_1.5.6_linux_amd64.zip
+ 1543  mv packer /usr/bin/
+ 1544  chmod +x /usr/bin/packer
+ 1545  packer --version
+ 1546  ls
+ 1547  cd terraform-mindtree-28Oct2020/
+ 1548  ls
+ 1549  cd 29-Packer/
+ 1550  ls
+ 1551  mkdir 02-Apache-GCP-Depoyment
+ 1552  ls
+ 1553  cd 02-Apache-GCP-Depoyment/
+ 1554  ls
+ 1555  mkdir packer 
+ 1556  cd packer/
+ 1557  ls
+ 1558  vim build.json 
+ 1559  ls
+ 1560  mkdir scripts
+ 1561  ls
+ 1562  vim scripts/base.sh
+ 1563  ls
+ 1564  cat build.json 
+ 1565  ls
+ 1566  packer build build.json 
+ 1567  ls
+ 1568  cd ..
+ 1569  ls
+ 1570  mkdir terraform
+ 1571  ls
+ 1572  cd terraform/
+ 1573  ls
+ 1574  cp -rf ../../../27-GCP-K8s-Cluster/kubernetes/providers.tf . 
+ 1575  ls
+ 1576  vim main.tf 
+ 1577  ls
+ 1578  terraform init 
+ 1579  terraform apply --auto-approve
+ 1580  ls
+ 1581  cat providers.tf 
+ 1582  ls
+ 1583  cp -rf ../../../27-GCP-K8s-Cluster/kubernetes/variable.tf . 
+ 1584  terraform apply --auto-approve
+ 1585  ks
+ 1586  ls
+ 1587  cat main.tf 
+ 1588  ls
+ 1589  vim providers.tf 
+ 1590  ls
+ 1591  vim variable.tf 
+ 1592  terraform apply --auto-approve
+ 1593  lllls
+ 1594  ls
+ 1595  cat variable.tf 
+ 1596  vim variable.tf 
+ 1597  ls
+ 1598  vim providers.tf 
+ 1599  terraform apply --auto-approve
+ 1600  terraform show
+ 1601  ls
+ 1602  rm -rf variable.tf 
+ 1603  ls
+ 1604  cd ..
+ 1605  ls
+ 1606  cd terraform/
+ 1607  ls
+ 1608  terraform destroy --auto-approve
+ 1609  ls
+ 1610  cd ..
+ 1611  ls
+ 1612  cd ..
+ 1613  ls
+ 1614  cd ..
+ 1615  ls
+ 1616  git add . ; git commit -m "01-Packer-Installation"; git push
+ 1617  ls
+ 1618  mkdir 30-LB-Front-Back_Packer_HyperSpace_Game
+ 1619  ls
+ 1620  cd 30-LB-Front-Back_Packer_HyperSpace_Game/
+ 1621  ls
+ 1622  mkdir packer
+ 1623  ls
+ 1624  cd packer/
+ 1625  ls
+ 1626  mkdir scripts 
+ 1627  ls
+ 1628  vim scripts/base.sh 
+ 1629  ls
+ 1630  vi hyperspace-be.sh
+ 1631  ls
+ 1632  vim hyperspace-fe.sh
+ 1633  ls
+ 1634  mv hyperspace-* scripts/
+ 1635  ls
+ 1636  vim hyperspace-fe.json
+ 1637  vim hyperspace-be.json
+ 1638  ls
+ 1639  cat scripts/hyperspace-fe.sh 
+ 1640  ls
+ 1641  packer build hyperspace-fe.json 
+ 1642  packer build hyperspace-be.json 
+ 1643  ls
+ 1644  cd ..
+ 1645  cd - 
+ 1646  ls
+ 1647  cd ..
+ 1648  ls
+ 1649  cp -rf ../29-Packer/02-Apache-GCP-Depoyment/terraform . 
+ 1650  ls
+ 1651  cd terraform/
+ 1652  ls
+ 1653  rm -rf terraform.tfstate* 
+ 1654  ls
+ 1655  cat providers.tf 
+ 1656  ls
+ 1657  > main.tf 
+ 1658  vim main.tf 
+ 1659  terraform init 
+ 1660  terraform apply --auto-approve 
+ 1661  terraform destroy --auto-approve 
+ 1662  ls
+ 1663  rm -rf terraform.tfstate* 
+ 1664  ls
+ 1665  cd ..
+ 1666  ls
+ 1667  cd ..
+ 1668  ls
+ 1669  git add . ; git commit -m "30-LB-Front-Back_Packer_HyperSpace_Game"; git push
+ 1670  ls
+ 1671  cd ..
+ 1672  ls
+ 1673  git clone https://github.com/amitvashisttech/terraform-mindtree-30Sept2020.git
+ 1674  ls
+ 1675  cd terraform-mindtree-28Oct2020/
+ 1676  ls
+ 1677  cp -rf ../terraform-mindtree-30Sept2020/31-CICD . 
+ 1678  cp -rf ../terraform-mindtree-30Sept2020/32-Terratest . 
+ 1679  ls
+ 1680  cd 31-CICD/
+ 1681  l
+ 1682  ls
+ 1683  cat README.md 
+ 1684  ls
+ 1685  cat 01-Jenkins/Code/
+ 1686  ls
+ 1687  cd 01-Jenkins/Code/
+ 1688  ls
+ 1689  cd petclinic/
+ 1690  ls
+ 1691  cd ..
+ 1692  ls
+ 1693  cd ..ls
+ 1694  cd ..
+ 1695  ls
+ 1696  cd ..
+ 1697  cd - 
+ 1698  ls
+ 1699  cat Pipeline/
+ 1700  cat Pipeline/jenkinsfile
+ 1701  cd ..
+ 1702  ls
+ 1703  git add . ; git commit -m "30-LB-Front-Back_Packer_HyperSpace_Game"; git push
+ 1704  apt-get install gcc
+ 1705  wget https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
+ 1706  tar -xvf go1.15.2.linux-amd64.tar.gz
+ 1707  mv go /usr/local
+ 1708  ls
+ 1709  rm -rf go1.15.2.linux-amd64.tar.gz 
+ 1710  ls
+ 1711  export GOROOT=/usr/local/go
+ 1712  export PATH=$GOROOT/bin:$PATH
+ 1713  go version
+ 1714  cd 
+ 1715  ls
+ 1716  git clone https://github.com/gruntwork-io/terratest.git
+ 1717  ls
+ 1718  cd terratest/
+ 1719  ls
+ 1720  cd examples/
+ 1721  ls
+ 1722  cd ..
+ 1723  ls
+ 1724  cp -rf ../terraform-mindtree-28Oct2020/32-Terratest/aws . 
+ 1725  ls
+ 1726  cd aws/
+ 1727  ls
+ 1728  cd 01-Hello-World/
+ 1729  ls
+ 1730  go test -v 
+ 1731  ls
+ 1732  vim main.tf 
+ 1733  go test -v 
+ 1734  ls
+ 1735  vim main.tf 
+ 1736  go test -v 
+ 1737  ls
+ 1738  cd ..
+ 1739  ls
+ 1740  cd 02-AWS-Instance/
+ 1741  ls
+ 1742  cat main.tf 
+ 1743  ls
+ 1744  cd ..
+ 1745  ls
+ 1746  cd 03-AWS-Web-Server/
+ 1747  ls
+ 1748  cat main.tf 
+ 1749  ls
+ 1750  cat terraform_aws_hello_world_example_test.go 
+ 1751  ls
+ 1752  cd ..
+ 1753  ls
+ 1754  cd examples/
+ 1755  ls
+ 1756  cd ..
+ 1757  ls
+ 1758  cd aws/
+ 1759  ls
+ 1760  cd 03-AWS-Web-Server/
+ 1761  ls
+ 1762  go test -v 
+ 1763  ls
+ 1764  cd ..
+ 1765  ls
+ 1766  cd 
+ 1767  ls
+ 1768  cd terraform-mindtree-28Oct2020/
+ 1769  ls
+ 1770  history > Day5_History
