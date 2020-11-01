@@ -1,0 +1,16 @@
+---
+
+- hosts: 'web'
+  become: yes
+  tasks:
+  - name: Install Apache2 Packages 
+    apt:  name=apache2 state=present
+
+  - name: Start Apache Service
+    service: name=apache2 state=started enabled=true
+
+- hosts: 'db'
+  become: yes
+  tasks:
+  - name: Install GIT Packages 
+    apt:  name=git state=present
