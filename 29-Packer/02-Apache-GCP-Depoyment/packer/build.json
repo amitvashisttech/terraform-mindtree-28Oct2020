@@ -1,0 +1,22 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "k8s-demo-project-291504",
+      "account_file": "/root/.ssh/k8s-demo-project-sa.json",
+      "zone": "us-west1-b",
+      "source_image": "ubuntu-1604-xenial-v20170202",
+      "ssh_username": "ubuntu",
+      "image_name": "apache-image-packer-{{timestamp}}",
+      "ssh_pty": "true"
+    }
+  ],
+  "provisioners": [
+     {
+            "type": "shell",
+            "script": "scripts/base.sh"
+        }
+      ]
+    }
+ 
+
